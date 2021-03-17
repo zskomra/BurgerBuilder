@@ -18,8 +18,23 @@ class BurgerBuilder extends Component {
             cheese: 0,
             bacon: 0,          
         },
-        totalPrice: 5
+        totalPrice: 5,
+        purchasable: false
     }
+
+    updatePurchaseState (ingredients) {
+        // const ingredients = {
+        //     ...this.state.ingredients
+        // };
+        const sum = Object.keys(ingredients)
+            .map(ingredientsKey => {
+                return ingredients[ingredientsKey]
+            }).reduce((sum, el) => {
+                return sum + el;
+            }, 0);
+            this.setState({purchasable : sum>0});
+    }
+    
 
     addIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
@@ -32,6 +47,7 @@ class BurgerBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+        this.updatePurchaseState(updatedIngredients);
     };
 
     removeIngredientHandler = (type) => {
@@ -48,6 +64,7 @@ class BurgerBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceSubtraction;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
+        this.updatePurchaseState(updatedIngredients);
     };
 
     render () {
@@ -58,6 +75,7 @@ class BurgerBuilder extends Component {
             disableInfo[key] = disableInfo[key] <=0
         }
         //{salad: true, meat: false etc}
+        console.log(this.state.purchasable);
         return (
             <Auxiliary>
                 <Burger ingredients={this.state.ingredients}/>
@@ -66,6 +84,7 @@ class BurgerBuilder extends Component {
                 ingredientSubtraction = {this.removeIngredientHandler}
                 disabled = {disableInfo}
                 price = {this.state.totalPrice}
+                purchasable = {!this.state.purchasable}
                 />
             </Auxiliary>
         );
