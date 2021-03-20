@@ -3,7 +3,7 @@ import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Layout.css';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
-import { render } from 'react-dom';
+
 
 class Layout extends Component {
     state ={
