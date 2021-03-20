@@ -8,12 +8,18 @@ const controls = [
     {label: 'Bacon', type: 'bacon'},
     {label: 'Cheese', type: 'cheese'},
     {label: 'Meat', type: 'meat'},
+    {label: 'Paprika', type:'paprika'}
 ];
 
 const buildControls = (props) => (
+    
     <div className={classes.BuildControls}>
         <p>Total price: <strong>{props.price.toFixed(2)}</strong></p>
+        
+        <div className={classes.Ingredients}>
+        
         {controls.map(ctrl => (
+            
             <BuildControl 
             key={ctrl.label} 
             ingredientLabel={ctrl.label}
@@ -21,7 +27,10 @@ const buildControls = (props) => (
             subtractionIngredient = {() => props.ingredientSubtraction(ctrl.type)}
             disabled = {props.disabled[ctrl.type]}
             />
+           
         ))}
+        
+        </div>
         <button 
         onClick = {props.order}
         disabled={props.purchasable}>ORDER NOW</button>        

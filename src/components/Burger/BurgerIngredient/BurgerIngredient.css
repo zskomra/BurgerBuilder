@@ -111,3 +111,12 @@
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
 }
+
+.Paprika {
+    width: 75%;
+    height: 5%;
+    background: linear-gradient(#e60c0c, #d30c0c);
+    margin: 2% auto;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 14px;
+}
