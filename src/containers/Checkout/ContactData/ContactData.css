@@ -1,0 +1,12 @@
+.ContactData {
+    text-align: center;
+    border: 1px solid black;
+    margin: auto;
+    display: block;
+    width: 75%;
+}
+
+.ContactData input {
+    display: block;
+    margin: auto;
+}
