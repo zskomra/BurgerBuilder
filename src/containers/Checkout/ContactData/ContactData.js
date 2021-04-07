@@ -48,6 +48,16 @@ class ContactData extends Component {
                     placeholder: 'Your E-Mail'
                 },
                 value: ''
+            },
+            deliverMethod: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        {value: 'fastest', displayValue: 'Fastest'},
+                        {value: 'cheapest', displayValue: 'Cheapest'}
+                    ]
+                },
+                value: ''
             }
         },
         loading: false,
@@ -81,7 +91,8 @@ class ContactData extends Component {
     render() {
         let form = (
             <form>
-                    <Input elementType="" elementConfig="" value=""/>
+                    {/* preparing */}
+                    <Input elementType="" elementConfig="" value=""/> 
                     <Input inputtype="input" type="email" name="email" placeholder="Your email" />
                     <Input inputtype="input" type="text" name="street" placeholder="Street" />
                     <Input inputtype="input" type="text" name="postal" placeholder="Postal" />
