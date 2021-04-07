@@ -8,11 +8,47 @@ import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
     state = {
-        name: '',
-        emao: '',
-        address: {
-            street: '',
-            postalCode: ''
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your Name'
+                },
+                value: ''
+            },
+            city: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your City'
+                },
+                value: ''
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your Street'
+                },
+                value: ''
+            },
+            zipCode: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'ZIP Code'
+                },
+                value: ''
+            },
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: 'Your E-Mail'
+                },
+                value: ''
+            }
         },
         loading: false,
     }
@@ -45,7 +81,7 @@ class ContactData extends Component {
     render() {
         let form = (
             <form>
-                    <Input inputtype="input" type="text" name="name" placeholder="Your name" />
+                    <Input elementType="" elementConfig="" value=""/>
                     <Input inputtype="input" type="email" name="email" placeholder="Your email" />
                     <Input inputtype="input" type="text" name="street" placeholder="Street" />
                     <Input inputtype="input" type="text" name="postal" placeholder="Postal" />
