@@ -9,6 +9,11 @@
     margin-right: 10px;
 }
 
+.Button:disabled {
+    color: lightgray;
+    cursor: not-allowed;
+}
+
 .Positive {
     color : green;
 }
